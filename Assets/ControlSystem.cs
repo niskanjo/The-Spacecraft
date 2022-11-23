@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlSystem : MonoBehaviour
 {
     Vector2 Velocity;
+
     // Start is called before the first frame update
     void Start()
     {
