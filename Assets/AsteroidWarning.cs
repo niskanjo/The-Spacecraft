@@ -7,19 +7,28 @@ using UnityEngine.UI;
 
 public class AsteroidWarning : MonoBehaviour
 {
-    GameObject spacecraft;
-    private Text warningMsg;
+    GameObject[] asteroid;
+    [SerializeField]
+    public Text warningMsg;
     // Start is called before the first frame update
     void Start()
     {
-        spacecraft = GameObject.FindGameObjectWithTag("spacecraft");
+        asteroid = GameObject.FindGameObjectsWithTag("asteroid");
         warningMsg.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, spacecraft.transform.position) < 0.5)
+        if (Vector2.Distance(transform.position, asteroid[0].transform.position) < 4)
+        {
+            warningMsg.enabled = true;
+        }
+        if (Vector2.Distance(transform.position, asteroid[1].transform.position) < 4)
+        {
+            warningMsg.enabled = true;
+        }
+        if (Vector2.Distance(transform.position, asteroid[2].transform.position) < 4)
         {
             warningMsg.enabled = true;
         }

@@ -20,21 +20,21 @@ public class ControlSystem : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow) == true)
         {
-            Velocity.y = 0.03f;
+            Velocity.y = 10f;
         }
         if (Input.GetKey(KeyCode.DownArrow) == true)
         {
-            Velocity.y = -0.03f;
+            Velocity.y = -4f;
         }
         if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
-            Velocity.x = -0.03f;
+            Velocity.x = -10f;
         }
         if (Input.GetKey(KeyCode.RightArrow) == true)
         {
-            Velocity.x = 0.03f;
+            Velocity.x = 10f;
         }
 
-        transform.Translate(Velocity);
+        transform.Translate(Velocity * Time.deltaTime);
     }
 }

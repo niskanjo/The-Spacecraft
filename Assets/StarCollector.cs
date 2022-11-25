@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class AsteroidCollision : MonoBehaviour
+public class StarCollector : MonoBehaviour
 {
-    GameObject[] asteroid;
+    GameObject[] Star;
+    int collectCount;
+
     // Start is called before the first frame update
     void Start()
     {
-        asteroid = GameObject.FindGameObjectsWithTag("asteroid");
+        Star = GameObject.FindGameObjectsWithTag("star");
+        collectCount = 0;
     }
 
     // Update is called once per frame
@@ -19,13 +20,12 @@ public class AsteroidCollision : MonoBehaviour
     {
 
     }
-
-    // Restart on asteroid collision
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "asteroid")
+        if (collision.gameObject.tag == "star")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            collision.gameObject.SetActive(false);
+            collectCount++;
         }
     }
 }
