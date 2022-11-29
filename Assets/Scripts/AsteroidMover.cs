@@ -5,7 +5,7 @@ using UnityEngine;
 public class AsteroidMover : MonoBehaviour
 {
     GameObject[] star;
-    int index;
+    int i;
     float speed = 0.008f;
 
     // Start is called before the first frame update
@@ -17,11 +17,11 @@ public class AsteroidMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, star[index].transform.position, speed);
-
-        if (Vector2.Distance(transform.position, star[index].transform.position) < 0.5)
+        transform.position = Vector2.MoveTowards(transform.position, star[i].transform.position, speed);
+        // Asteroids move towards a random star
+        if (Vector2.Distance(transform.position, star[i].transform.position) == 0)
         {
-            index = Random.Range(0, star.Length);
+            i = Random.Range(0, star.Length);
         }
     }
 }

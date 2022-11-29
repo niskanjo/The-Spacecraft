@@ -413,7 +413,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -709,7 +709,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1066,6 +1066,8 @@ GameObject:
   - component: {fileID: 937090082}
   - component: {fileID: 937090081}
   - component: {fileID: 937090080}
+  - component: {fileID: 937090088}
+  - component: {fileID: 937090087}
   - component: {fileID: 937090084}
   - component: {fileID: 937090085}
   - component: {fileID: 937090086}
@@ -1133,7 +1135,6 @@ PolygonCollider2D:
       - {x: -0.42999998, y: -0.25}
       - {x: -0.39, y: -0.29999998}
       - {x: -0.44, y: -0.65999997}
-  m_UseDelaunayMesh: 0
 --- !u!50 &937090081
 Rigidbody2D:
   serializedVersion: 4
@@ -1234,6 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2b74e41cc92694896aa28e98ce33e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Force: {x: 0, y: 0}
 --- !u!114 &937090085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,6 +1261,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningMsg: {fileID: 1463501300}
+--- !u!114 &937090087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937090079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f2ed618a0e1494c8e52c5b760f79c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &937090088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937090079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4990087da337541a9de2d4b5b8f7ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963096761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,7 +1584,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1678,7 +1703,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1795,7 +1820,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1831,6 +1856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1900,8 +1926,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019289851, y: 0.038578957}
-  m_Size: {x: 2.1356297, y: 2.5600007}
+  m_Offset: {x: 0.05210221, y: -0.027045608}
+  m_Size: {x: 2.070005, y: 2.6912508}
   m_Direction: 0
 --- !u!212 &2121031734
 SpriteRenderer:
@@ -1987,7 +2013,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 1127355940}
     m_Modifications:
     - target: {fileID: 3675341083980990573, guid: a774a3d8c27c53d4196d557a936f4de5, type: 3}
@@ -2004,7 +2029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3675341083980990574, guid: a774a3d8c27c53d4196d557a936f4de5, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3675341083980990574, guid: a774a3d8c27c53d4196d557a936f4de5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2079,5 +2104,4 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a774a3d8c27c53d4196d557a936f4de5, type: 3}

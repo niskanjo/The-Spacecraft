@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class AsteroidCollision : MonoBehaviour
+public class GroundCollision : MonoBehaviour
 {
-    GameObject[] asteroid;
+    GameObject Ground;
     // Start is called before the first frame update
     void Start()
     {
-        asteroid = GameObject.FindGameObjectsWithTag("asteroid");
+        Ground = GameObject.FindGameObjectWithTag("ground");
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    // Restart on asteroid collision
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "asteroid")
+        if (collision.gameObject.tag == "ground" && collision.relativeVelocity.magnitude > 6)
         {
+            Debug.Log("Ground collision: Exceed safe velocity");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (collision.gameObject.tag == "ground") {
+            Debug.Log("Ground collision");
         }
     }
 }

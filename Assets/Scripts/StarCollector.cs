@@ -18,13 +18,17 @@ public class StarCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (collectCount == Star.Length)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "star")
         {
             collision.gameObject.SetActive(false);
+            Debug.Log("star active");
             collectCount++;
         }
     }

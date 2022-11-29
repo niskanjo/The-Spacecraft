@@ -20,21 +20,19 @@ public class AsteroidWarning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, asteroid[0].transform.position) < 4)
+        if (
+                Vector2.Distance(transform.position, asteroid[0].transform.position) < 4 ||
+                Vector2.Distance(transform.position, asteroid[1].transform.position) < 4 ||
+                Vector2.Distance(transform.position, asteroid[2].transform.position) < 4
+           )
         {
             warningMsg.enabled = true;
-        }
-        if (Vector2.Distance(transform.position, asteroid[1].transform.position) < 4)
-        {
-            warningMsg.enabled = true;
-        }
-        if (Vector2.Distance(transform.position, asteroid[2].transform.position) < 4)
-        {
-            warningMsg.enabled = true;
+            Debug.Log("asteroid warning " + warningMsg.enabled);
         }
         else
         {
             warningMsg.enabled = false;
+            Debug.Log("asteroid warning " + warningMsg.enabled);
         }
     }
 }
